@@ -8,14 +8,14 @@ A dynamic and automated Google Sheets app designed to help you track your goals 
 
 ## Key Features
 
-- **Automatic Goal Categorization:** Track your goals by status (Not Started, In Progress, Past Due, Complete, Incomplete) and keep everything organized.
-- **Dynamic Sorting by Deadline:** Automatically sorts goals by deadline whenever you update the due date, ensuring you stay focused on what matters most.
-- **Goal Completion Management:** Completed goals are instantly moved to a "Completed Goals" sheet for easy review.
-- **Failure Report with Feedback:** Automatically generates a list of incomplete goals and provides a feedback section for self-reflection on why goals were not achieved (e.g., procrastination, unrealistic goal).
-- **Seamless Automation:** Automatically handles goal updates, moves, and deletions, so you can focus on progress, not paperwork.
-- - **Google Calendar Integration:** Create a schedule through your Google Sheet that automatically updates your Google Calendar.
-- **Labor Time Estimator:** Calculate estimated labor times with the built-in labor time estimator to plan your day efficiently.
-- **Daily To-Do List Management:** List your todos for the day and check off completed tasks as you go, ensuring you stay on track.
+- **Contact Logging:** Easily log and manage all your networking contacts in one place.
+- **Connection Level Tracking:** Identify the level of connection with each contact (e.g., LinkedIn, Messaging, Mutual, Low Interest) to prioritize your networking efforts.
+- **Follow-Up Scheduling:** Schedule the next follow-up date for each contact and stay on top of your networking goals.
+- **Notes Section:** Take detailed notes for each contact to remember key details and conversation points.
+- **Connection Type Identification:** Categorize contacts by type (e.g., Peer, Influencer, Dream Job) to tailor your networking strategy.
+- **Contact Search:** Quickly search for contacts to find the information you need.
+- **Free Date Tracking:** Keep track of dates that are available for networking activities.
+
 
 ## Why Use This App?
 
