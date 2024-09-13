@@ -24,6 +24,18 @@ A dynamic and automated Google Sheets app designed to help you track your goals 
 - **Reflect and Improve:** Use the feedback section to identify areas for personal growth.
 - **Integrated Scheduling:** Seamlessly create and update your calendar events directly from your Google Sheet.
 
+
+## What I learned
+- clasp 
+- JIRA
+- Confluence
+- QUnitGS2
+  - adding libraries to google app script
+- triggers
+- execution logs
+- Manual code review since Qunit doesn't have a way to track test coverage
+  
+
 <!-- ## See It in Action
 
 ![Goal Tracker App Demo](link-to-your-demo-screenshot-or-gif) -->
