@@ -29,11 +29,8 @@ A dynamic and automated Google Sheets app designed to help you track your goals 
 - clasp 
 - JIRA
 - Confluence
-- QUnitGS2
-  - adding libraries to google app script
 - triggers
 - execution logs
-- Manual code review since Qunit doesn't have a way to track test coverage
   
 
 <!-- ## See It in Action
