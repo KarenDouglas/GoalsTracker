@@ -20,12 +20,6 @@ function addTasksToGoogleTasks() {
   // Loop through each row of data (skip the header row)
   for (let i = 1; i < data.length; i++) { // Loop only up to the last row with values
     let row = data[i]
-    const isRowEmpty = row.every(cell => cell === "");
-    if(isRowEmpty){
-        Logger.log('This row is empty');
-      return;
-    }
-  
       if (row[saveIndex] === true) { // Check if "Save" is marked as true
           // makes sure user enters a task value 
           if(row[taskIndex] === ""){
@@ -64,6 +58,7 @@ function addTasksToGoogleTasks() {
         sheet.getRange(i + 1, saveIndex + 1).setValue(false);
       }   
   }
+ syncTasksFromGoogleTasks()
 }
 
 

@@ -31,7 +31,7 @@ A dynamic and automated Google Sheets app designed to help you track your goals 
 - Confluence
 - triggers
 - execution logs
-  
+- Eyes were bigger than my stomach
 
 <!-- ## See It in Action
 
