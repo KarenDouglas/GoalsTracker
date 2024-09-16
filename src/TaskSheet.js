@@ -1,3 +1,4 @@
+
 function addTasksToGoogleTasks() {
   Logger.log('inserted from IDE')
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Tasks');
@@ -60,7 +61,6 @@ function addTasksToGoogleTasks() {
   }
  syncTasksFromGoogleTasks()
 }
-
 
 
 
