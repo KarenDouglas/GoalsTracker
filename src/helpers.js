@@ -22,7 +22,7 @@ function checkTasksAllExistInGoogleTasks() {
 
   // Start checking from the second row (skip headers)
   for (let i = 1; i < data.length; i++) {
-    const sheetTaskId = data[i][taskIdIndex];
+    const sheetTaskId = data[i][taskIdIndex].trim();
 
     if (sheetTaskId && sheetTaskId.trim() !== '') {
       if (googleTaskIds.has(sheetTaskId)) {
@@ -33,8 +33,27 @@ function checkTasksAllExistInGoogleTasks() {
     }
   }
 }
-const id = 'NDNHZzM5NkctcW9HQ1NBOQ'
-function checkTaskExistInGoogleTasks() {
+function isAlertConfirmed(alertTitle, alertStr) {
+  // Get the UI object for the current spreadsheet
+  const ui = SpreadsheetApp.getUi();
+
+  // Display an alert with Yes and No buttons
+  const response = ui.alert(
+      alertTitle,
+      alertStr,
+    ui.ButtonSet.YES_NO
+  );
+
+  // Handle the user's response
+  if (response == ui.Button.YES) {
+    // User clicked "Yes"
+      return true;
+  } else if (response == ui.Button.NO) {
+    // User clicked "No"
+     return false;
+  }
+}
+function isTaskIdInExistInGoogleTasks(id) {
     // Get the active spreadsheet and the sheet by name
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Tasks');
   const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
@@ -57,8 +76,10 @@ function checkTaskExistInGoogleTasks() {
     if (sheetTaskId && sheetTaskId.trim() !== '') {
       if (googleTaskIds.has(sheetTaskId)) {
         Logger.log(`Task ID ${sheetTaskId} exists in Google Tasks.`);
+        return true;
       } else {
         Logger.log(`Task ID ${sheetTaskId} does NOT exist in Google Tasks.`);
+        return false
       }
     }
   
