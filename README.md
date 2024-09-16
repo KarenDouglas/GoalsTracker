@@ -28,7 +28,9 @@ A dynamic and automated Google Sheets app designed to help you track your goals 
 ## What I learned
 - clasp 
 - JIRA
+  - Issues linking
 - Confluence
+  - Improving User Stories and Acceptance Criteria
 - triggers
 - execution logs
 - Eyes were bigger than my stomach

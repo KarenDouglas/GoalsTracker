@@ -3,6 +3,7 @@ function checkTasksAllExistInGoogleTasks() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Tasks');
   const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
   const taskIdIndex = headers.indexOf('TaskID');
+    const taskIndex = headers.indexOf('Task');
   const taskListId = '@default'; // '@default' for default task list
 
   // Retrieve all tasks from Google Tasks
@@ -23,12 +24,13 @@ function checkTasksAllExistInGoogleTasks() {
   // Start checking from the second row (skip headers)
   for (let i = 1; i < data.length; i++) {
     const sheetTaskId = data[i][taskIdIndex].trim();
+    const taskTitle = data[i][taskIndex]
 
     if (sheetTaskId && sheetTaskId.trim() !== '') {
       if (googleTaskIds.has(sheetTaskId)) {
-        Logger.log(`Task ID ${sheetTaskId} exists in Google Tasks.`);
+        Logger.log(`Task ID ${sheetTaskId} | ${taskTitle} exists in Google Tasks.`);
       } else {
-        Logger.log(`Task ID ${sheetTaskId} does NOT exist in Google Tasks.`);
+        Logger.log(`Task ID ${sheetTaskId} | ${taskTitle} does NOT exist in Google Tasks.`);
       }
     }
   }
@@ -83,4 +85,18 @@ function isTaskIdInExistInGoogleTasks(id) {
       }
     }
   
+}
+
+function getLastRow (){
+    // Find the last row with data in the 'TaskID' column
+  let lastDataRow = 1; // Start from the header row
+  for (let i = data.length - 1; i >= 1; i--) {
+    // Start from the bottom and go up
+    if (data[i][taskIdIndex] && data[i][taskIdIndex].toString().trim() !== '') {
+      lastDataRow = i + 1; // Rows are 1-indexed
+      break;
+    }
+  }
+  return lastDataRow;
+
 }

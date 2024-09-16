@@ -60,7 +60,7 @@ function addTasksToGoogleTasks() {
  syncTasksFromGoogleTasks()
 }
 
-
+// Deletes Tasks from Google Sheets and update Google Tasks
 function deleteTask(){
 
 // loops through sheet
@@ -109,6 +109,25 @@ function deleteTask(){
       }
   }
 }
+
+//Syncs deleted data from Google Tasks and updates Google Sheets
+function syncDeletedTasksFromGoogleTasks() {
+  const lastRow = getLastRow();
+
+  // loops through sheet data
+  for (let i = 1; i < lastRow; i++) {
+    const sheetTaskId = data[i][taskIdIndex]
+    if(!isTaskIdInExistInGoogleTasks(sheetTaskId)){
+       sheet.deleteRow(i+1)
+       ui.alert(`${data[i][taskIndex]} is being deleted`)
+      Logger.log(` ${i} DELETED task ${data[i][taskIndex]} with ID ${sheetTaskId} from Google Sheet`);
+    i--
+    }else{
+      Logger.log(`${sheetTaskId} remains`)
+    }
+  }
+
+};
 
 function formatSheet(sheet) {
   const dataRange = sheet.getDataRange();
